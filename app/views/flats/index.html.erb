@@ -1,0 +1,25 @@
+<%= render "navbar" %>
+
+  <h1>All our flats</h1>
+  <h6>You searched for 8 flats. We found <%= @flats.count %> flats out of <%= @flats.count %> available on our website)</h6>
+  <div class="container">
+    <div class="row">
+        <% @flats.each do |f| %>
+      <div class="col-xs-12 col-sm-3">
+      <div class="card">
+          <%= link_to f.name, flat_path(f) %><br>
+          <%= f.address %>
+          <h5>Price per night</h5><%= f.price_per_night %>
+          <i class="fa fa-users-two"></i><%= f.number_of_guests %>
+          <i class="fa fa-euro"></i><%= link_to "Edit", edit_flat_path(f) %>
+          <%= link_to "Delete", flat_path(f),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %><br>
+        </div>
+      </div>
+          <% end %>
+    </div>
+  </div>
+</div>
+
+

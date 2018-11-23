@@ -1,0 +1,17 @@
+<%= render "navbar" %>
+
+<h1>This is the flat you requested</h1>
+
+<ul>
+
+<li><%= @flat.name %></li>
+<li><%= @flat.address %></li>
+<li><%= @flat.description %></li>
+<li><strong><%= 'Flat Price:   ' %></strong><%= "$" %><%= @flat.price_per_night %></li>
+<li><strong><%= 'Guests Allowed:   ' %></strong><%= @flat.number_of_guests %></li>
+</ul>
+
+<hr>
+
+<div class="back"><%= link_to "Back Home", flats_path %></div>
+<div class="edit"><%= link_to "Edit", edit_flat_path(@flat)%></div>
